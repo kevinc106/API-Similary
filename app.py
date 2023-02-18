@@ -13,7 +13,7 @@ def readModule(name):
   for file in glob.glob(path):
     print(file)
     "reading verbs of TOMO"
-    with open(file, 'r') as stream:
+    with open(file, 'r',encoding="utf8") as stream:
         try:
             verbs = yaml.safe_load(stream)
             dictTomo = {word["expression"]:name for word in verbs}
